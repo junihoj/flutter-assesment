@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_assesment/core/constants/app_colors.dart';
 
 class AppTheme {
-  static const String _fontFamily = "";
+  static const String _fontFamily = "PublicSans";
   static TextTheme get textTheme {
     return const TextTheme(
       displayLarge: TextStyle(
@@ -52,57 +53,68 @@ class AppTheme {
         fontFamily: _fontFamily,
         fontWeight: FontWeight.w500,
         fontSize: 14,
-        letterSpacing: 0.1,
       ),
       titleSmall: TextStyle(
         fontFamily: _fontFamily,
         fontWeight: FontWeight.w500,
         fontSize: 12,
-        letterSpacing: 0.1,
       ),
 
       bodyLarge: TextStyle(
         fontFamily: _fontFamily,
         fontWeight: FontWeight.w400,
         fontSize: 16,
-        letterSpacing: 0.5,
       ),
       bodyMedium: TextStyle(
         fontFamily: _fontFamily,
         fontWeight: FontWeight.w400,
         fontSize: 14,
-        letterSpacing: 0.25,
       ),
       bodySmall: TextStyle(
         fontFamily: _fontFamily,
         fontWeight: FontWeight.w400,
         fontSize: 12,
-        letterSpacing: 0.4,
       ),
 
       labelLarge: TextStyle(
         fontFamily: _fontFamily,
         fontWeight: FontWeight.w500,
         fontSize: 14,
-        letterSpacing: 0.1,
       ),
       labelMedium: TextStyle(
         fontFamily: _fontFamily,
         fontWeight: FontWeight.w500,
         fontSize: 12,
-        letterSpacing: 0.5,
       ),
       labelSmall: TextStyle(
         fontFamily: _fontFamily,
         fontWeight: FontWeight.w500,
         fontSize: 10,
-        letterSpacing: 0.5,
       ),
     );
   }
 
   static ThemeData get lightTheme {
-    return ThemeData(useMaterial3: true, textTheme: textTheme);
+    return ThemeData(
+      useMaterial3: true,
+
+      textTheme: textTheme,
+      inputDecorationTheme: InputDecorationTheme(
+        filled: true,
+        fillColor: AppColors.ash,
+
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(12),
+          borderSide: BorderSide.none,
+        ),
+        contentPadding: const EdgeInsets.symmetric(
+          vertical: 14,
+          horizontal: 12,
+        ),
+        hintStyle: const TextStyle(color: AppColors.grey, fontSize: 14),
+      ),
+      scaffoldBackgroundColor: AppColors.primaryBlue,
+    );
   }
 
   static ThemeData get darkTheme {
