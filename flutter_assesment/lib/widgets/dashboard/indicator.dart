@@ -8,12 +8,16 @@ class Indicator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return StepProgressIndicator(
-      totalSteps: 3,
-      currentStep: currentStep,
-      selectedColor: AppColors.indicatorBlue,
-      unselectedColor: AppColors.indicatorBlue.withValues(alpha: 0.2),
-      padding: 10,
+    return SizedBox(
+      width: 80,
+      child: StepProgressIndicator(
+        totalSteps: 3,
+        currentStep: currentStep,
+        selectedColor: AppColors.indicatorBlue,
+        unselectedColor: AppColors.indicatorBlue.withValues(alpha: 0.2),
+        padding: 2,
+        roundedEdges: Radius.circular(2),
+      ),
     );
   }
 }

@@ -41,13 +41,22 @@ class CategoriesSection extends StatelessWidget {
   // }
 
   Widget _categories() {
-    return Wrap(
-      runSpacing: 15,
-      spacing: 15,
-      alignment: WrapAlignment.spaceBetween,
-      children: mockCategories.map((category) {
-        return CategoryItem(icon: category.icon, title: category.name);
-      }).toList(),
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final paintableWidth = (constraints.maxWidth - 15 * 3) / 4;
+        return Wrap(
+          runSpacing: 15,
+          spacing: 15,
+          alignment: WrapAlignment.start,
+          children: mockCategories.map((category) {
+            return CategoryItem(
+              icon: category.icon,
+              title: category.name,
+              width: paintableWidth,
+            );
+          }).toList(),
+        );
+      },
     );
   }
 }

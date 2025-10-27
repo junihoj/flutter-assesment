@@ -5,7 +5,13 @@ import 'package:flutter_svg/flutter_svg.dart';
 class CategoryItem extends StatelessWidget {
   final String icon;
   final String title;
-  const CategoryItem({super.key, required this.icon, required this.title});
+  final double? width;
+  const CategoryItem({
+    super.key,
+    required this.icon,
+    required this.title,
+    this.width,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -14,6 +20,7 @@ class CategoryItem extends StatelessWidget {
         color: AppColors.ash,
         borderRadius: BorderRadius.circular(14),
       ),
+      width: width,
       padding: EdgeInsets.all(10),
       child: Column(
         spacing: 5,

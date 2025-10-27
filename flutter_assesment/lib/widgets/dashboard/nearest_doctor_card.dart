@@ -55,6 +55,7 @@ class _NearestDoctorCardState extends State<NearestDoctorCard> {
   Widget _doctorInfo({required BuildContext context}) {
     return Row(
       spacing: 10,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         CircleAvatar(
           backgroundImage: AssetImage(_nearestDoctor.doctor.image),
@@ -83,7 +84,7 @@ class _NearestDoctorCardState extends State<NearestDoctorCard> {
                   color: AppColors.grey,
                 ),
               ),
-
+              SizedBox(height: 5),
               //rating and reviews
               Row(
                 children: [
@@ -94,13 +95,15 @@ class _NearestDoctorCardState extends State<NearestDoctorCard> {
                       height: 1.4,
                     ),
                   ),
-                  Icon(
-                    Icons.star_outline_rounded,
-                    color: AppColors.amber,
-                    size: 16,
-                    weight: 1,
-                  ),
-
+                  SizedBox(width: 4),
+                  // Icon(
+                  //   Icons.star_outline_rounded,
+                  //   color: AppColors.amber,
+                  //   size: 16,
+                  //   weight: 1,
+                  // ),
+                  SvgPicture.asset(AppIcons.rating, height: 16, width: 16),
+                  SizedBox(width: 8),
                   Text(
                     "${_nearestDoctor.doctor.reviews} Reviews",
                     style: Theme.of(context).textTheme.titleMedium!.copyWith(
@@ -128,6 +131,7 @@ class _NearestDoctorCardState extends State<NearestDoctorCard> {
             color: _nearestDoctor.isFavorite
                 ? AppColors.favorite
                 : AppColors.greyBorder,
+            size: 20,
           ),
         ),
       ],

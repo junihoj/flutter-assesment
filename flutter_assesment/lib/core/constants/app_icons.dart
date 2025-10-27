@@ -24,4 +24,5 @@ class AppIcons {
 
   static const String location = '$basePath/location.svg';
   static const String shield = '$basePath/shield.svg';
+  static const String rating = '$basePath/rating.svg';
 }
