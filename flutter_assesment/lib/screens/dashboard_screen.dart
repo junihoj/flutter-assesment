@@ -11,7 +11,9 @@ class DashboardScreen extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(
         physics: BouncingScrollPhysics(),
-        child: Column(children: [Header(), _buildBody(), FooterSection()]),
+        child: SafeArea(
+          child: Column(children: [Header(), _buildBody(), FooterSection()]),
+        ),
       ),
     );
   }
