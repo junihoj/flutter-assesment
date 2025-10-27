@@ -58,6 +58,7 @@ class AppTheme {
         fontFamily: _fontFamily,
         fontWeight: FontWeight.w500,
         fontSize: 12,
+        height: 1.4,
       ),
 
       bodyLarge: TextStyle(

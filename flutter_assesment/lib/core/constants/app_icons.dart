@@ -21,4 +21,7 @@ class AppIcons {
   static const String lungs = '$basePath/lungs.svg';
   static const String teeth = '$basePath/teeth.svg';
   static const String stethoscope = '$basePath/stethoscope.svg';
+
+  static const String location = '$basePath/location.svg';
+  static const String shield = '$basePath/shield.svg';
 }
